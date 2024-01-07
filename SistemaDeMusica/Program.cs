@@ -21,6 +21,7 @@ namespace SistemaDeMusica
             builder.Services.AddEntityFrameworkMySql().AddDbContext<SistemaMusicaDBContex>(options => options.UseMySql(builder.Configuration.GetConnectionString("DataBase"), ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DataBase"))));
 
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+            builder.Services.AddScoped<ITarefaMusicaRepositorio, TarefaMusicaRepositorio>();
 
             var app = builder.Build();
 
